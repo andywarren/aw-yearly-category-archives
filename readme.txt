@@ -75,6 +75,9 @@ To install the plugin follow these instructions:
 
 == Changelog ==
 
+= 1.2.2 =
+* Bug/Security Fix
+
 = 1.2.1 =
 * Removed jQuery script from being echoed, and properly regsitered/enqueued it.
 * Updated "Compatible Up To" version.
