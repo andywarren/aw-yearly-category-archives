@@ -2,7 +2,7 @@
 Contributors: awarren 
 Tags: Yearly Category Archives, Archives, Yearly Archives, Category Archives by Year
 Requires at least: 3.5.2
-Tested up to: 3.6
+Tested up to: 3.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,9 +20,10 @@ Follow the instructions below to use the plugin.
   
 The following list explains this shortcode's usage and requirements.  
   
-* This shortcode has two (2) attributes, and both attributes are required.  
-* The `cat="X"` attribute is the category ID you wish to display yearly links from. Replace the X with the numerical ID of the category you wish to query.  
-* The `postslug="slug-to-post-or-page"` attribute is the slug to the page that will display your yearly archived posts. This is also the slug of the page you will include the second shortcode on.  
+* This shortcode has two (3) attributes.  Two (2) are required, and one (1) is optional.  
+* The `cat="X"` attribute is the category ID you wish to display yearly links from. Replace the X with the numerical ID of the category you wish to query.  You may include a comma separated list of category IDs with this attribute if you want to query multiple categories.  **This attribute is required.**  
+* The `postslug="slug-to-post-or-page"` attribute is the slug to the page that will display your yearly archived posts. This is also the slug of the page you will include the second shortcode on.  **This attribute is required.**
+* The `dropdown="yes"` attribute will allow a dropdown select input to be used in place of the standard unordered list of the year links.  **This attribute is optional and can be left off completely.**  
 * Place this shortcode where you would like to display the year links to the specified category.
   
   
@@ -31,7 +32,7 @@ The following list explains this shortcode's usage and requirements.
 The following list explains this shortcode's usage and requirements.  
   
 * This shortcode has three (3) attributes. One (1) is required, and two (2) are optional.  
-* The `cat="X"` attribute is the category ID you wish to display yearly archived posts from. This attribute is required. Replace the X with the numerical ID of the category you wish to query.  
+* The `cat="X"` attribute is the category ID you wish to display yearly archived posts from.  Replace the X with the numerical ID of the category you wish to query.  You may include a comma separated list of category IDs with this attribute if you want to query multiple categories.  **This attribute is required.**  
 * The `readmore="Continue Reading"` attribute is the text you wish to display for the "Read More" link. This attribute is optional and will default to "Read More" if left out.  
 * The `publishedon="n/j/Y"` attribute is the PHP date format the published on date will appear in the archived posts. This attribute is optional and will default to "M jS, Y" if left out. Refer [here](http://php.net/manual/en/function.date.php) for further info on the PHP date format.  
 * Place this shortcode where you would like to display your archived posts.
@@ -51,7 +52,7 @@ The following list explains this shortcode's usage and requirements.
 * Currently I will only be able to offer limited support for this plugin. This could change in the future, also if time allows.  
 * If you do not know how to find your category IDs, I recommend [Reveal IDs](http://wordpress.org/plugins/reveal-ids-for-wp-admin-25/).
 
-Follow me on Twitter [@iAmAndyWarren](https://twitter.com/iAmAndyWarren) or find me at [andy-warren.net](http://andy-warren.net).  You can also reach me at [Coded](http://coded.andy-warren.net).
+Follow me on Twitter [@iAmAndyWarren](https://twitter.com/iAmAndyWarren) or find me at [andy-warren.net](http://andy-warren.net).  You can also reach me at [Coded](http://coded.andy-warren.net).  Want to make the plugin better?  Fork it or submit pull requests on GitHub at [https://github.com/andywarren/aw-yearly-category-archives](https://github.com/andywarren/aw-yearly-category-archives).
 
 == Installation ==
 
@@ -66,12 +67,21 @@ To install the plugin follow these instructions:
 
 1. This screenshot is of the shortcode needed to generate the yearly links.  Place this shortcode where you would like to display the year links to the specified category.
 2. This screenshot is of the unordered list the above shortcode will generate.
-3. This screenshot is of the shortcode needed to display the yearly category archives.  Place this shortcode where you would like to display your yearly archived posts.
-4. This screenshot is of the post layout you will see when using the above shortcode.
-5. This screenshot shows the settings page when you first arrive there.
-6. This screenshot shows the settings page when you have opted to include a custom post structure for the output loop.
+3. This screenshot is of the optional dropdown that can be used in place of the unordered list in the screenshot above.  
+4. This screenshot is of the shortcode needed to display the yearly category archives.  Place this shortcode where you would like to display your yearly archived posts.
+5. This screenshot is of the post layout you will see when using the above shortcode.
+6. This screenshot shows the settings page when you first arrive there.
+7. This screenshot shows the settings page when you have opted to include a custom post structure for the output loop.
 
 == Changelog ==
+
+= 1.2.1 =
+* Removed jQuery script from being echoed, and properly regsitered/enqueued it.
+* Updated "Compatible Up To" version.
+
+= 1.2 =
+* Added new attribute `dropdown="yes"` to the shortcode used to generate the year links.  This will allow for a dropdown to be used in place of the standard unordered list of years.
+* Added ability to query multiple categories
 
 = 1.1.1 =
 * Updated paths to the plugin menu pages.
@@ -80,10 +90,13 @@ To install the plugin follow these instructions:
 * Added settings page to allow site admin to input custom HTML and/or WordPress Template tags to be used for the archived posts output loop.
 
 = 1.0.1 =
-* Corrected file path for menu item icon
-* Bug fixes
+* Corrected file path for menu item icon.
+* Bug fixes.
 
 == Upgrade Notice ==
+
+= 1.2 =
+* This update will add two (2) new features to the plugin.  You can now choose to use a dropdown in place of the standard unordered list to display year links.  You can also now properly query multiple categories by using a comma separated list in the `cat="X"` attribute of both shortcodes.
 
 = 1.1.1 =
 This update will correct the paths the the plugin menu pages.  With this update the pages will no longer 404.
