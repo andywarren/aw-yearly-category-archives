@@ -3,7 +3,7 @@
 Plugin Name: AW WordPress Yearly Category Archives
 Plugin URI: http://coded.andy-warren.net/wordpress-yearly-category-archives/
 Description: This plugin will allow for yearly archives of specific categories.
-Version: 1.2.1
+Version: 1.2.2
 Author: Andy Warren
 Author URI: http://coded.andy-warren.net
 
@@ -152,7 +152,7 @@ function aw_wp_yca_deactivate() {
 
 function aw_settings_page() {
 	
-if (isset($_POST["aw-yearly-category-archives-update-options"])) {
+if (isset($_POST["update_settings"])) {
 	check_admin_referer( 'aw-yearly-category-archives-update-options' );
 	//$customPostLayout = esc_attr($_POST["post-layout"]);
 	$customPostLayout = $_POST["post-layout"];
@@ -185,7 +185,7 @@ echo $radioButtonValue;
 	</p>
 	
 	<form id="aw_wp_yca_form" method="post" action="">
-		<?php wp_nonce_field('update-options'); ?>
+		<?php wp_nonce_field('aw-yearly-category-archives-update-options'); ?>
 		<span id="radioButtonsWatcher">
 			<?php $checkboxchecked2 = get_option( 'aw_wp_yca_customhtmlphp'); ?>
 			<label for="customhtml">Check this box to include custom HTML and/or WordPress PHP template tags in the output loop.</label>
@@ -198,7 +198,7 @@ echo $radioButtonValue;
 			<textarea id="codeTextArea" name="post-layout" rows="20" cols="120"><?php echo get_option('aw_wp_yca_postcontent'); ?></textarea>
 			<br/>			
 		</span>	
-	    <input type="hidden" name="aw-yearly-category-archives-update-options" value="Y" />
+	    <input type="hidden" name="update_settings" value="Y" />
 	    <input id="submitCode" class="button-primary" type="submit" name="Submit Code" value="<?php _e( 'Update Options' ); ?>" />	
 	</form>
 	
