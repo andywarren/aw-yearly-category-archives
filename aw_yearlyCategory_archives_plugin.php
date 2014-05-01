@@ -152,7 +152,8 @@ function aw_wp_yca_deactivate() {
 
 function aw_settings_page() {
 	
-if (isset($_POST["update_settings"])) {
+if (isset($_POST["aw-yearly-category-archives-update-options"])) {
+	check_admin_referer( 'aw-yearly-category-archives-update-options' );
 	//$customPostLayout = esc_attr($_POST["post-layout"]);
 	$customPostLayout = $_POST["post-layout"];
 	$newEvalString = stripslashes($customPostLayout);  
@@ -197,7 +198,7 @@ echo $radioButtonValue;
 			<textarea id="codeTextArea" name="post-layout" rows="20" cols="120"><?php echo get_option('aw_wp_yca_postcontent'); ?></textarea>
 			<br/>			
 		</span>	
-	    <input type="hidden" name="update_settings" value="Y" />
+	    <input type="hidden" name="aw-yearly-category-archives-update-options" value="Y" />
 	    <input id="submitCode" class="button-primary" type="submit" name="Submit Code" value="<?php _e( 'Update Options' ); ?>" />	
 	</form>
 	
