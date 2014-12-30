@@ -3,6 +3,7 @@
 <h1 class="awMenuPageHeader">AW WordPress Yearly Category Archives Instructions</h1>
 
 <p>This plugin will allow for yearly archives of specific categories.  See below for full instructions on its usage.</p>
+<p>Want to make it better?  Contribute here: <a href="https://github.com/andywarren/aw-yearly-category-archives" target="_blank">https://github.com/andywarren/aw-yearly-category-archives</a></p>
 
 <br/>
 
@@ -11,14 +12,15 @@
 <hr class="awHalfWidthFloatLeft"/><br/>
 
 <p>
-	The first shortcode is <code>[aw_year_links cat="X" postslug="slug-to-post-or-page"]</code>, which is used to build and display the year links.
+	The first shortcode is <code>[aw_year_links cat="X" postslug="slug-to-post-or-page" dropdown="yes"]</code>, which is used to build and display the year links.
 	<br/>
 	The following list explains this shortcode's usage and requirements.
 </p>
 	<ul class="awAdminUL">
-		<li><span class="form-invalid">This shortcode has two (2) attibutes, and both attributes are required.</span></li>
-		<li>The <code>cat="X"</code> attribute is the category ID you wish to display yearly links from. Replace the <code>X</code> with the numerical ID of the category you wish to query.</li>
-		<li>The <code>postslug="slug-to-post-or-page"</code> attribute is the slug to the page that will display your yearly archived posts.  This is also the slug of the page you will include the second shortcode on.</li>
+		<li><span class="form-invalid">This shortcode has three (3) attibutes.  Two (2) are required, and one (1) is optional.</span></li>
+		<li>The <code>cat="X"</code> attribute is the category ID you wish to display yearly links from. Replace the <code>X</code> with the numerical ID of the category you wish to query. You may include a comma separated list of category IDs with this attribute if you want to query multiple categories.  <span class="form-invalid">This attribute is required.</span></li>
+		<li>The <code>postslug="slug-to-post-or-page"</code> attribute is the slug to the page that will display your yearly archived posts.  This is also the slug of the page you will include the second shortcode on.  <span class="form-invalid">This attribure is required</span></li>
+		<li>* The <code>dropdown="yes"</code> attribute will allow a dropdown select input to be used in place of the standard unordered list of the year links.  This attribute is optional and can be left off completely.</li>
 		<li>Place this shortcode where you would like to display the year links to the specified category.</li>
 	</ul>
 
@@ -32,7 +34,7 @@
 </p>
 	<ul class="awAdminUL">
 		<li>This shortcode has three (3) attributes.  One (1) is required, and two (2) are optional.</li>
-		<li>The <code>cat="X"</code> attribute is the category ID you wish to display yearly archived posts from.  <span class="form-invalid">This attribute is required.</span>  Replace the <code>X</code> with the numerical ID of the category you wish to query.</li>
+		<li>The <code>cat="X"</code> attribute is the category ID you wish to display yearly archived posts from.  <span class="form-invalid">This attribute is required.</span>  Replace the <code>X</code> with the numerical ID of the category you wish to query.  You may include a comma separated list of category IDs with this attribute if you want to query multiple categories.</li>
 		<li>The <code>readmore="Continue Reading"</code> attribute is the text you wish to display for the "Read More" link.  This attribute is optional and will default to "Read More" if left out.</li>
 		<li>The <code>publishedon="n/j/Y"</code> attribute is the PHP date format the published on date will appear in the archived posts.  This attribute is optional and will default to "M jS, Y" if left out.  Refer <a target="_blank" title="PHP Date Format Reference" href="http://php.net/manual/en/function.date.php">here</a> for further info on the PHP date format.</li>
 		<li>Place this shortcode where you would like to display your archived posts.</li>

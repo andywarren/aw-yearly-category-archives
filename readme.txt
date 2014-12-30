@@ -2,7 +2,7 @@
 Contributors: awarren 
 Tags: Yearly Category Archives, Archives, Yearly Archives, Category Archives by Year
 Requires at least: 3.5.2
-Tested up to: 3.9
+Tested up to: 4.0.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -52,7 +52,7 @@ The following list explains this shortcode's usage and requirements.
 * Currently I will only be able to offer limited support for this plugin. This could change in the future, also if time allows.  
 * If you do not know how to find your category IDs, I recommend [Reveal IDs](http://wordpress.org/plugins/reveal-ids-for-wp-admin-25/).
 
-Follow me on Twitter [@iAmAndyWarren](https://twitter.com/iAmAndyWarren) or find me at [andy-warren.net](http://andy-warren.net).  You can also reach me at [Coded](http://coded.andy-warren.net).  Want to make the plugin better?  Fork it or submit pull requests on GitHub at [https://github.com/andywarren/aw-yearly-category-archives](https://github.com/andywarren/aw-yearly-category-archives).
+Follow me on Twitter [@iAmAndyWarren](https://twitter.com/iAmAndyWarren) or find me at [andy-warren.net](http://andy-warren.net).  Want to make the plugin better?  Fork it or submit pull requests on GitHub at [https://github.com/andywarren/aw-yearly-category-archives](https://github.com/andywarren/aw-yearly-category-archives).
 
 == Installation ==
 
@@ -74,6 +74,9 @@ To install the plugin follow these instructions:
 7. This screenshot shows the settings page when you have opted to include a custom post structure for the output loop.
 
 == Changelog ==
+
+= 1.2.3 =
+* Wrapped shortcode functions in an output buffer to make rendered content display correctly when the shortcode is used in a widget.
 
 = 1.2.2 =
 * Bug/Security Fix
