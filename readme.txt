@@ -76,7 +76,7 @@ To install the plugin follow these instructions:
 == Changelog ==
 
 = 1.2.4 =
-* Corrected parameter in WP_Query() for the post output function
+* Fixed #2 - Corrected parameter in WP_Query() for the post output function
 
 = 1.2.3 =
 * Wrapped shortcode functions in an output buffer to make rendered content display correctly when the shortcode is used in a widget.
