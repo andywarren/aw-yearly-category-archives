@@ -3,7 +3,7 @@ Contributors: awarren
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C6AZTULD7TEMA 
 Tags: Yearly Category Archives, Archives, Yearly Archives, Category Archives by Year
 Requires at least: 3.5.2
-Tested up to: 4.2.4
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -78,6 +78,12 @@ To install the plugin follow these instructions:
 7. This screenshot shows the settings page when you have opted to include a custom post structure for the output loop.
 
 == Changelog ==
+
+= 1.2.6 =
+* Set Year Links to show in Ascending order from most current to least current.
+
+= 1.2.5 =
+* Bug Fixes
 
 = 1.2.4 =
 * Corrected parameter in WP_Query() for the post output function

@@ -3,7 +3,7 @@
 Plugin Name: AW WordPress Yearly Category Archives
 Plugin URI: hhttp://www.andy-warren.net
 Description: This plugin will allow for yearly archives of specific categories.
-Version: 1.2.5
+Version: 1.2.6
 Author: Andy Warren
 Author URI: http://www.andy-warren.net
 
@@ -90,7 +90,10 @@ function aw_create_year_links($atts) {
 		$dateArray[] = $postdate;				
 	}
 	
-	if ($post) {	
+	if ($post) {
+		
+		$yearsListArray = array();
+			
 		$earliestPostDate = min($dateArray);
 		$latestPostDate = max($dateArray);
 		
@@ -112,9 +115,19 @@ function aw_create_year_links($atts) {
 					} else {
 						$piece = '<li class="awDatesLI"><a href="' . site_url() . '/' . $postslug .  '/?' . $piece . '">' . $piece . '</a></li>';
 					}
-					echo $piece;
+					
+					$yearsListArray[] = $piece;
+					
 				}				
 			}
+			
+		}
+		
+		rsort($yearsListArray);
+		
+		foreach ($yearsListArray as $yearLink) {
+			
+			echo($yearLink);
 			
 		}
 		
