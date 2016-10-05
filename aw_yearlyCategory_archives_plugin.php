@@ -109,11 +109,11 @@ function aw_create_year_links($atts) {
 			foreach ($pieces as $piece) {
 				$currentYear = date('Y');
 				if ($piece <= $currentYear) {
-				
+
 					if ($dropdown == 'yes') {
-						$piece = '<option class="awDropdownOption" value="' . site_url() . '/' . $postslug .  '/?' . $piece . '">' . $piece . '</option>';	
+						$piece = '<option class="awDropdownOption" value="' . esc_url( home_url() ) . '/' . $postslug .  '/?' . $piece . '">' . $piece . '</option>';
 					} else {
-						$piece = '<li class="awDatesLI"><a href="' . site_url() . '/' . $postslug .  '/?' . $piece . '">' . $piece . '</a></li>';
+						$piece = '<li class="awDatesLI"><a href="' . esc_url( home_url() ) . '/' . $postslug .  '/?' . $piece . '">' . $piece . '</a></li>';
 					}
 					
 					$yearsListArray[] = $piece;
