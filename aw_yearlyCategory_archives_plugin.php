@@ -269,7 +269,7 @@ function aw_show_posts_by_year_and_cat($atts) {
 			
 			<?php echo '<p class="awPublishedOnDate">Published on ' . get_the_date($publishedon) . '</p>'; ?>
 			
-			<?php echo '<p class="awPostExcerpt">' . $first_25_excerpt . '...<a class="awReadMore" href="' . get_permalink() . '">' . $readmore . '</a></p>'; ?>
+			<?php echo '<p class="awPostExcerpt">' . strip_tags($first_25_excerpt) . '...<a class="awReadMore" href="' . get_permalink() . '">' . $readmore . '</a></p>'; ?>
 			
 			<hr class="awPostDivider"/>
 		
