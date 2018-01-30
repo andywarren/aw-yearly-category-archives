@@ -3,7 +3,7 @@ Contributors: awarren
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C6AZTULD7TEMA 
 Tags: Yearly Category Archives, Archives, Yearly Archives, Category Archives by Year
 Requires at least: 3.5.2
-Tested up to: 4.7.2
+Tested up to: 4.9.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -78,6 +78,10 @@ To install the plugin follow these instructions:
 7. This screenshot shows the settings page when you have opted to include a custom post structure for the output loop.
 
 == Changelog ==
+
+= 1.2.8 =
+* Remove get_post_types() from both shortcodes as it was causing issues for logged out users
+* changed get_posts() post_type parameter to "any"
 
 = 1.2.7 =
 * Added strip_tags() to the returned excerpt text to remove any html tags from the standard post layout. Does not affect custom post layout.

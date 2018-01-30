@@ -3,7 +3,7 @@
 Plugin Name: AW WordPress Yearly Category Archives
 Plugin URI: hhttp://www.andy-warren.net
 Description: This plugin will allow for yearly archives of specific categories.
-Version: 1.2.7
+Version: 1.2.8
 Author: Andy Warren
 Author URI: http://www.andy-warren.net
 
@@ -82,8 +82,8 @@ function aw_create_year_links($atts) {
 	ob_start();
 				
 	$dateArray = array();
-	$postTypes = get_post_types( '', 'names' ); 
-	$myposts = get_posts(array('posts_per_page' => -1, 'post_type' => $postTypes, 'category' => $cat, 'post_status' => 'publish', 'orderby' => 'post_date'));
+	 
+	$myposts = get_posts(array('posts_per_page' => -1, 'post_type' => 'any', 'category' => $cat, 'post_status' => 'publish', 'orderby' => 'post_date'));
 	
 	foreach ($myposts as $post) { 
 		$postdate = mysql2date('Y', $post->post_date);
@@ -239,15 +239,14 @@ function aw_show_posts_by_year_and_cat($atts) {
 	}
 	
 	// Start the loop to display posts
-	$postTypes = get_post_types( '', 'names' );	
-    unset($postTypes['page'],$postTypes['attachment'],$postTypes['revision'],$postTypes['nav_menu_item']);
+	
     $showPosts = get_option('posts_per_page');
 	
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	
 	$customLayout = get_option('aw_wp_yca_postcontent');
 	
-	$postLoop = new WP_Query(array('posts_per_page' => -1, 'post_type' => $postTypes, 'cat' => $cat, 'post_status' => 'publish', 'orderby' => 'post_date', 'order' => 'DESC', 'paged' => $paged));
+	$postLoop = new WP_Query(array('posts_per_page' => -1, 'post_type' => 'any', 'cat' => $cat, 'post_status' => 'publish', 'orderby' => 'post_date', 'order' => 'DESC', 'paged' => $paged));
 	while ( $postLoop->have_posts() ) : $postLoop->the_post();
 	
 	$postdate = get_the_date('Y');
